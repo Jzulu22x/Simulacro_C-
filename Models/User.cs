@@ -29,7 +29,7 @@ public class User
         Adress = adress;
     }
 
-    protected void ShowDetails()
+    protected virtual void ShowDetails()
     {
         Console.WriteLine($"ID: {Id}");
         Console.WriteLine($"Name: {Name}");
