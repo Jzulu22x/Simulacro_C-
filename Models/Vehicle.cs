@@ -38,4 +38,16 @@ public class Vehicle
             Console.WriteLine($"Vehicle with ID: {id} not found");
         }
     }
+
+    public void ShowDetails()
+    {
+        Console.WriteLine($"ID: {Id}");
+        Console.WriteLine($"Placa: {Placa}");
+        Console.WriteLine($"Type: {Type}");
+        Console.WriteLine($"Engine Number: {EngineNumber}");
+        Console.WriteLine($"Serial Number: {SerialNumber}");
+        Console.WriteLine($"People Capacity: {PeopleCapacity}");
+        Console.WriteLine($"Owner Name: {Owner?.TakeName()}");
+    }
+
 }

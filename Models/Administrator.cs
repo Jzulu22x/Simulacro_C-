@@ -10,7 +10,7 @@ public static class Administrator
     public static List<Customer> ListCustomers = [];
     public static List<Vehicle> ListVehicles = [];
 
-    public static void ListAllClients()
+    public static void ListAllCustomers()
     {
         Console.WriteLine("List of Customers:");
         foreach (var customer in ListCustomers)
@@ -28,15 +28,34 @@ public static class Administrator
         }
     }
 
+    public static void ListAllVehicles()
+    {
+        Console.WriteLine("List of Vehicles:");
+        foreach (var vehicle in ListVehicles)
+        {
+            vehicle.ShowDetails();
+        }
+    }
+
     public static void CustomerMoreThan30Years()
     {
-        Console.WriteLine("Customers older than 30 years:");
-        foreach (var customer in ListCustomers)
+        List<Customer> customersMore30Years = ListCustomers.Where(e => e.CalculateAge() > 30).ToList();
+        if (customersMore30Years.Count > 0)
         {
-            if(customer.CalculateAge() > 30)
+            Console.WriteLine("Customers older than 30 years:");
+            foreach (var customer in ListCustomers)
             {
-                customer.ShowDetails();
+                if (customer.CalculateAge() > 30)
+                {
+                    Interface.Separator();
+                    customer.ShowDetails();
+                    Interface.Separator();
+                }
             }
+        }
+        else
+        {
+            Console.WriteLine("No customers found over 30 years old");
         }
     }
 
@@ -52,9 +71,22 @@ public static class Administrator
         return ListCustomers.Where(e => e.PreferredPaymentMethod == "credit card").ToList();
     }
 
-    public static List<Driver> DriversWhitA2License()
+    public static void DriversWhitA2License()
     {
-        Console.WriteLine("Drivers with A2 license:");
-        return ListDrivers.Where(e => e.LicenseCategory == "a2").ToList();
+        List<Driver> A2License = ListDrivers.Where(e => e.LicenseCategory == "A2").ToList();
+        if (A2License.Count > 0)
+        {
+            Console.WriteLine("\nDrivers with A2 license:");
+            foreach (var item in A2License)
+            {
+                Interface.Separator();
+                item.ShowDetails();
+                Interface.Separator();
+            }
+        }
+        else
+        {
+            Console.WriteLine("No drivers found with A2 license");
+        }
     }
 }

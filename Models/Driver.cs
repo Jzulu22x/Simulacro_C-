@@ -40,5 +40,10 @@ public class Driver : User
     public int CalculateAge()
     {
         return base.CalculateAge();
-    }    
+    }   
+
+    public string TakeIdentificationNumber()
+    {
+        return base.TakeIdentificationNumber();
+    }
 }

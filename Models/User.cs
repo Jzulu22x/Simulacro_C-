@@ -53,4 +53,14 @@ public class User
     {
         Console.WriteLine($"Age: {CalculateAge()}");
     }
+
+    public string TakeName()
+    {
+        return Name;
+    }
+
+    public string TakeIdentificationNumber()
+    {
+        return IdentificationNumber;
+    }
 }

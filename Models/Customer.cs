@@ -39,4 +39,8 @@ public class Customer : User
     {
         return base.CalculateAge();
     }
+    public string TakeIdentificationNumber()
+    {
+        return base.TakeIdentificationNumber();
+    }
 }
