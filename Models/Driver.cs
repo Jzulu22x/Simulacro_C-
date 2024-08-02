@@ -27,5 +27,18 @@ public class Driver : User
     {
         Console.WriteLine($"Driving experience increased from: {years} to: {DrivingExperience += years}");
         DrivingExperience += years;
+    }
+
+    public void ShowDetails()
+    {
+        base.ShowDetails();
+        Console.WriteLine($"License Number: {LicenseNumber}");
+        Console.WriteLine($"License Category: {LicenseCategory}");
+        Console.WriteLine($"Driving Experience: {DrivingExperience} years");
+    }
+
+    public int CalculateAge()
+    {
+        return base.CalculateAge();
     }    
 }

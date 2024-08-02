@@ -27,10 +27,10 @@ public class Vehicle
 
     public void DeleteVehicle(int id)
     {
-        var vehicle = Administrador.Vehicles.FirstOrDefault(vehicle=> vehicle.Id == id);
+        var vehicle = Administrator.ListVehicles.FirstOrDefault(vehicle=> vehicle.Id == id);
         if(vehicle != null)
         {
-            Administrador.Vehicles.Remove(vehicle);
+            Administrator.ListVehicles.Remove(vehicle);
             Console.WriteLine($"Vehicle with ID: {id} has been deleted");
         }
         else

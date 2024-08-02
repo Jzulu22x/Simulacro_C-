@@ -27,4 +27,16 @@ public class Customer : User
             MembershipLevel = "premium";
         }
     }
+
+    public void ShowDetails()
+    {
+        base.ShowDetails();
+        Console.WriteLine($"Membership Level: {MembershipLevel}");
+        Console.WriteLine($"Preferred Payment Method: {PreferredPaymentMethod}");
+    }
+
+    public int CalculateAge()
+    {
+        return base.CalculateAge();
+    }
 }
